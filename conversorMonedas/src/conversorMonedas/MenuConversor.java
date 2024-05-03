@@ -14,8 +14,9 @@ public class MenuConversor {
 	private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        mostrarMenu();
-		
+        
+    	
+    	mostrarMenu();
 		
 	}
     
@@ -27,14 +28,14 @@ public class MenuConversor {
     	String direccion = "https://v6.exchangerate-api.com/v6/dc4b2e8cdfa462de9498f977/latest/" +
                 "USD";
 
-HttpClient client = HttpClient.newHttpClient();
-HttpRequest request = HttpRequest.newBuilder()
-     .uri(URI.create(direccion))
-     .build();
-HttpResponse<String> response = client
-     .send(request, HttpResponse.BodyHandlers.ofString());
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest request = HttpRequest.newBuilder()
+  	   .uri(URI.create(direccion))
+  	   .build();
+		HttpResponse<String> response = client
+	   .send(request, HttpResponse.BodyHandlers.ofString());
 
-String json = response.body();
+		String json = response.body();
 
 		//Convertir el JSON a un objeto DatosMonedas
 		Gson gson = new Gson();
@@ -50,7 +51,7 @@ String json = response.body();
 
          int monto;
         do {
-            System.out.println("Seleccione la moneda a la que desea convertir:");
+            System.out.println("Seleccione la Opcion para Conversion:");
             System.out.println("1. Dolar USA a Peso Argentino");
             System.out.println("2. Peso Argentino a Dolar USA");
             System.out.println("3. Dolar a Real Brasileno");
@@ -63,8 +64,9 @@ String json = response.body();
             
 
             System.out.print("Opción: ");
-            int opcion = scanner.nextInt();
-            scanner.nextLine();
+            
+            try { 
+            int opcion = Integer.parseInt(scanner.nextLine());
             
             switch (opcion) {
                 
@@ -72,7 +74,7 @@ String json = response.body();
                     System.out.println("Ingresa Candidad a Cambiar");
                     monto = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Cantindad en Peso Argentino" +(monto*pesoAr));
+                    System.out.println("Cantindad en Peso Argentino"+" "+(monto*pesoAr));
                     System.out.println(" ");
                     System.out.println("******************************");
                     break;
@@ -80,7 +82,7 @@ String json = response.body();
                 	 System.out.println("Ingresa Candidad a Cambiar");
                 	 monto = scanner.nextInt();
                 	 scanner.nextLine(); 
-                     System.out.println("Total en Dolares:"+df.format(monto/pesoAr));
+                     System.out.println("Total en Dolares:"+" "+df.format(monto/pesoAr));
                      System.out.println(" ");
                      System.out.println("******************************");
                     break;
@@ -88,7 +90,7 @@ String json = response.body();
                 	 System.out.println("Ingresa Candidad a Cambiar");
                 	 monto = scanner.nextInt();
                 	 scanner.nextLine(); 
-                     System.out.println("Total en Real Brasilero:"+(monto*realBr));
+                     System.out.println("Total en Real Brasilero:"+" "+(monto*realBr));
                      System.out.println(" ");
                      System.out.println("******************************");
                     break;
@@ -96,7 +98,7 @@ String json = response.body();
                 	 System.out.println("Ingresa Candidad a Cambiar");
                 	 monto = scanner.nextInt();
                 	 scanner.nextLine(); 
-                     System.out.println("Total en Dolares:"+df.format(monto/realBr));
+                     System.out.println("Total en Dolares:"+" "+df.format(monto/realBr));
                      System.out.println(" ");
                      System.out.println("******************************");
                     break;
@@ -104,7 +106,7 @@ String json = response.body();
                 	 System.out.println("Ingresa Candidad a Cambiar");
                 	 monto = scanner.nextInt();
                 	 scanner.nextLine(); 
-                     System.out.println("Total en Peso Colombiano:"+(monto*pesoCol));
+                     System.out.println("Total en Peso Colombiano:"+" "+(monto*pesoCol));
                      System.out.println(" ");
                      System.out.println("******************************");
                     break;
@@ -112,13 +114,16 @@ String json = response.body();
                 	 System.out.println("Ingresa Candidad a Cambiar");
                 	 monto = scanner.nextInt();
                 	 scanner.nextLine(); 
-                     System.out.println("Total en Dolares:"+df.format(monto/pesoCol));
+                     System.out.println("Total en Dolares:"+" "+df.format(monto/pesoCol));
                      System.out.println(" ");
                      System.out.println("******************************");
                     break;
                 
                 default:
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
+            }
+            }catch(NumberFormatException e) {
+            	System.out.println("Porfavor escoge una opcion correcta del Menu");
             }
             
             System.out.println("Desea hacer otro Cambio Y/N?");

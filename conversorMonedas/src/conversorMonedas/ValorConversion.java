@@ -28,11 +28,28 @@ public class ValorConversion {
 
         // Convertir el JSON a un objeto DatosMonedas
        DatosMoneda datosMonedas = gson.fromJson(json, DatosMoneda.class);
-        // Ahora puedes acceder a los datos del objeto DatosMonedas
-       System.out.println("Result: " + datosMonedas.getDolar());
-       System.out.println("Result: " + datosMonedas.getPesoArgentino());
-       System.out.println("Result: " + datosMonedas.getPesoColombiano());
-       System.out.println("Result: " + datosMonedas.getRealBrasilero());
-       
+      
+        // Ahora puedes acceder a los datos del objeto DatosMonedasdouble pesoAr = datosMonedas.getPesoArgentino();
+       double realBr = datosMonedas.getRealBrasilero();
+       double pesoCol = datosMonedas.getPesoColombiano();
+       double pesoAr = datosMonedas.getPesoArgentino();
+       System.out.println("Result: " + realBr);
+       System.out.println("Result: " + pesoCol);
+       System.out.println("Result: " + pesoAr);
     }
+
+ // Métodos para acceder a los valores de conversión
+    public static double getRealBr() {
+        return ValorConversion.getRealBr();
     }
+
+    public static double getPesoCol() {
+        return ValorConversion.getPesoCol();
+    }
+
+    public static double getPesoAr() {
+        return ValorConversion.getPesoAr();
+    }
+
+    
+}
