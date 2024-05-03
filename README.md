@@ -8,3 +8,9 @@
 <p> convertir de Real Brasilero a Dólares USA y Viceversa</p>
 
 <p> convertir de Peso Colombiano a Dólares USA y Viceversa</p>
+
+<h3>USO</h3>
+<p>Para usarla debes tener Instaaldo tu IDE favorito para Desarrollo JAVA</p>
+
+<h3>LICENCIA</h3>
+<p>Con licencia MIT el codigo puede ser usado y mejorado bajo contribución de Desarrollo</p>
