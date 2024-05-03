@@ -8,7 +8,7 @@
 <p> convertir de Real Brasilero a Dólares USA y Viceversa</p>
 
 <p> convertir de Peso Colombiano a Dólares USA y Viceversa</p>
-![Screenshot_2024-05-03_10-56-33](https://github.com/Beelzebu666/ConversorMonedasJava/assets/157124149/0c0d9463-8e7d-4b7c-a8f9-748a781b73b4)
+<img src="https://github.com/Beelzebu666/ConversorMonedasJava/assets/157124149/0c0d9463-8e7d-4b7c-a8f9-748a781b73b4" alt="conversor de monedas"> 
 
 
 <h3>USO</h3>
