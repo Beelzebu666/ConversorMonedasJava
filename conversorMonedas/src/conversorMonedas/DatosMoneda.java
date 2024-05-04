@@ -25,8 +25,8 @@ public class DatosMoneda {
     @Override
     public String toString() {
         return "DatosMoneda{" +
-                "result='" + result + '\'' +
-                ", conversion_rates=" + conversion_rates +
+                "resultado='" + result + '\'' +
+                ", Taza_Conversion=" + conversion_rates +
                 '}';
     }
 }
